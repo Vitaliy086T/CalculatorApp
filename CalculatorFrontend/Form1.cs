@@ -16,20 +16,20 @@ namespace CalculatorFrontend
             httpClient = new HttpClient { BaseAddress = new Uri("http://localhost:5218/") };
         }
 
-        // ✅ One handler for all digit & operator buttons
+        //One handler for all digit & operator buttons
         private void InputButton_Click(object sender, EventArgs e)
         {
             var button = (Button)sender;
             textBoxDisplay.Text += button.Text;
         }
 
-        // ✅ Decimal button
+        //Decimal button
         private void buttonDecimal_Click(object sender, EventArgs e)
         {
             textBoxDisplay.Text += ".";
         }
 
-        // ✅ Clear all
+        //Clear all
         private void buttonClear_Click(object sender, EventArgs e)
         {
             textBoxDisplay.Text = string.Empty;
@@ -37,7 +37,7 @@ namespace CalculatorFrontend
             labelStatus.Text = "Готов";
         }
 
-        // ✅ Backspace (удалить последний символ)
+        //Backspace
         private void buttonBackspace_Click(object sender, EventArgs e)
         {
             if (textBoxDisplay.Text.Length > 0)
@@ -46,7 +46,7 @@ namespace CalculatorFrontend
             }
         }
 
-        // ✅ Calculate using API
+        //Calculate using API
         private async void buttonCalculate_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(textBoxDisplay.Text))
@@ -67,7 +67,7 @@ namespace CalculatorFrontend
                 var json = JsonSerializer.Serialize(request);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                // ⚠️ Backend endpoint for full expressions
+                //Backend endpoint for full expressions
                 var response = await httpClient.PostAsync("api/calculator/evaluate", content);
 
                 if (!response.IsSuccessStatusCode)
@@ -98,7 +98,7 @@ namespace CalculatorFrontend
                 {
                     labelResult.Text = $"Результат: {result.Result}";
                     labelStatus.Text = "Успешно";
-                    textBoxDisplay.Text = result.Result.ToString(); // show result directly
+                    textBoxDisplay.Text = result.Result.ToString();
                 }
                 else
                 {

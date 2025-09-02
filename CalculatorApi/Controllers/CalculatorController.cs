@@ -20,7 +20,7 @@ namespace CalculatorApi.Controllers
 
             try
             {
-                // A quick way using DataTable (not recommended for prod, but fine for demo)
+                // A quick way using DataTable
                 var result = new System.Data.DataTable().Compute(request.Expression, null);
 
                 return Ok(new CalculatorResponse
