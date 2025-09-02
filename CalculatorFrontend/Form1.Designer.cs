@@ -50,7 +50,7 @@
             this.textBoxDisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDisplay.Location = new System.Drawing.Point(326, 136);
             this.textBoxDisplay.Name = "textBoxDisplay";
-            this.textBoxDisplay.Size = new System.Drawing.Size(231, 24);
+            this.textBoxDisplay.Size = new System.Drawing.Size(268, 24);
             this.textBoxDisplay.TabIndex = 0;
             this.textBoxDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -257,7 +257,7 @@
             this.Controls.Add(this.button0);
             this.Controls.Add(this.labelResult);
             this.Controls.Add(this.textBoxDisplay);
-            this.Name = "CalculatorApp";
+            this.Name = "Form1";
             this.Text = "CalculatorApp";
             this.ResumeLayout(false);
             this.PerformLayout();
